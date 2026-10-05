@@ -1,0 +1,113 @@
+{
+  "model": "google/gemma-4-26B-A4B-it",
+  "revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+  "split": "full_single_turn",
+  "n": 3641,
+  "correct": 2919,
+  "official_scored_n": 3641,
+  "official_accuracy_completed": 0.8017028288931612,
+  "accuracy_attempted": 0.8017028288931612,
+  "wilson_95_attempted": [
+    0.7884367900059608,
+    0.8143329120021068
+  ],
+  "categories": {
+    "simple_python": {
+      "n": 400,
+      "correct": 374,
+      "accuracy_attempted": 0.935
+    },
+    "simple_java": {
+      "n": 100,
+      "correct": 30,
+      "accuracy_attempted": 0.3
+    },
+    "simple_javascript": {
+      "n": 50,
+      "correct": 19,
+      "accuracy_attempted": 0.38
+    },
+    "multiple": {
+      "n": 200,
+      "correct": 184,
+      "accuracy_attempted": 0.92
+    },
+    "parallel": {
+      "n": 200,
+      "correct": 160,
+      "accuracy_attempted": 0.8
+    },
+    "parallel_multiple": {
+      "n": 200,
+      "correct": 165,
+      "accuracy_attempted": 0.825
+    },
+    "irrelevance": {
+      "n": 240,
+      "correct": 196,
+      "accuracy_attempted": 0.8166666666666667
+    },
+    "live_simple": {
+      "n": 258,
+      "correct": 215,
+      "accuracy_attempted": 0.8333333333333334
+    },
+    "live_multiple": {
+      "n": 1053,
+      "correct": 846,
+      "accuracy_attempted": 0.8034188034188035
+    },
+    "live_parallel": {
+      "n": 16,
+      "correct": 15,
+      "accuracy_attempted": 0.9375
+    },
+    "live_parallel_multiple": {
+      "n": 24,
+      "correct": 17,
+      "accuracy_attempted": 0.7083333333333334
+    },
+    "live_irrelevance": {
+      "n": 884,
+      "correct": 684,
+      "accuracy_attempted": 0.7737556561085973
+    },
+    "live_relevance": {
+      "n": 16,
+      "correct": 14,
+      "accuracy_attempted": 0.875
+    }
+  },
+  "errors": {
+    "correct": 2919,
+    "arguments_or_call_count": 385,
+    "tool_selection": 91,
+    "unnecessary_call": 244,
+    "missing_or_invalid_call": 2
+  },
+  "latency_completed_seconds": {
+    "mean": 0.8047314311498531,
+    "median": 0.40639255795395,
+    "p95": 3.430520302033983
+  },
+  "output_tokens": {
+    "total": 328830,
+    "mean": 90.31310079648448
+  },
+  "allocated_gpu_seconds_attempted": 11720.108563266462,
+  "truncated_outputs": 1,
+  "aggregation": "Case-weighted accuracy across the recorded categories; not the BFCL v4 overall weighted leaderboard score.",
+  "limitations": [
+    "Only the recorded categories, not a BFCL v4 overall leaderboard score.",
+    "Allocated GPU-seconds = request wall time multiplied by card count; not measured kernel compute time.",
+    "GPU telemetry is sampled and includes serving allocations; not an exact memory peak.",
+    "Wilson interval is descriptive only; dataset entries need not be independent or representative of real tasks.",
+    "Automatic error labels are provisional; manually review representative failures."
+  ],
+  "sampled_peak_vram_mib_per_gpu": {
+    "0": 19901.0,
+    "1": 19901.0,
+    "2": 19901.0,
+    "3": 19901.0
+  }
+}

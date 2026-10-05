@@ -1,0 +1,67 @@
+{
+  "status": "frozen_after_smoke_validation",
+  "bfcl_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "bfcl_version": "BFCL_v4",
+  "seed": 20261004,
+  "categories": [
+    "simple_python",
+    "simple_java",
+    "simple_javascript",
+    "multiple",
+    "parallel",
+    "parallel_multiple",
+    "irrelevance",
+    "live_simple",
+    "live_multiple",
+    "live_parallel",
+    "live_parallel_multiple",
+    "live_irrelevance",
+    "live_relevance"
+  ],
+  "server": {
+    "engine": "vllm",
+    "version": "0.19.1",
+    "python_environment": ".venv-gemma",
+    "compatibility": "Actual BF16 TP4 serving on four RTX 3090 passed text, single-tool and parallel-tool inference; native gemma4 tool and reasoning parsers.",
+    "host": "127.0.0.1",
+    "port": 18080,
+    "gpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tensor_parallel_size": 4,
+    "dtype": "bfloat16",
+    "gpu_memory_utilization": 0.8,
+    "max_model_len": 32768,
+    "max_num_seqs": 1,
+    "language_model_only": true,
+    "prefix_caching": false,
+    "speculative_decoding": false,
+    "observed_attention_backend": "TRITON_ATTN (automatic selection)",
+    "observed_moe_backend": "TRITON (unquantized)"
+  },
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 4096,
+    "seed": 20261004,
+    "tool_choice": "auto"
+  },
+  "timeout_seconds": 300,
+  "client_retries": 0,
+  "concurrency": 1,
+  "warmup_requests": 3,
+  "note": "Official single-turn FC conversion and scoring; native templates. Prior validated generation and resource limits retained. Gemma and Qwen use different vLLM versions and native thinking defaults; cost comparisons are configuration-specific.",
+  "native_template_defaults": {
+    "enable_thinking": false,
+    "source": "pinned chat_template.jinja, no override supplied"
+  },
+  "execution_conditions": {
+    "background_model_downloads": "completed before measurement",
+    "environment_installation": "completed before measurement",
+    "compute_jobs": "only the selected local model server during measured requests"
+  },
+  "evaluation_scope": "Full official single-turn categories; case-weighted accuracy, not full BFCL v4 overall."
+}

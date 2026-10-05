@@ -1,0 +1,42 @@
+{
+  "bfcl_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "bfcl_version": "BFCL_v4",
+  "scope": "single_turn",
+  "n": 3641,
+  "categories": {
+    "simple_python": 400,
+    "simple_java": 100,
+    "simple_javascript": 50,
+    "multiple": 200,
+    "parallel": 200,
+    "parallel_multiple": 200,
+    "irrelevance": 240,
+    "live_simple": 258,
+    "live_multiple": 1053,
+    "live_parallel": 16,
+    "live_parallel_multiple": 24,
+    "live_irrelevance": 884,
+    "live_relevance": 16
+  },
+  "dataset_path": "configs/datasets/full_single_turn.jsonl",
+  "sha256": "b65e4e4a34defe80e6371af08b3d1391cb39056f03fa245fec9f2a949d27b5c6",
+  "source_sha256": {
+    "BFCL_v4_simple_python.json": "82dd63ba502eb2520c6b5d1d9a5c4b590e03ff261565175561f6228a367d1991",
+    "BFCL_v4_simple_java.json": "13d2303a125b08754f0e41995b9273b5005fa8ed8ebfaa24ef53b4d83c4b5c6e",
+    "BFCL_v4_simple_javascript.json": "329e67fedf79a6243d93dbda4b388d12bd2d31f1f2163d92cb6ef676d1764f44",
+    "BFCL_v4_multiple.json": "aef168155ebd74b7ac2401198b201343bc7d16d7a3d7e0d4e6d8ee82c6969b2a",
+    "BFCL_v4_parallel.json": "19f51a82eff42e5d62541aa500115a056eb78f437c2ba1f10415fd7c8e5dda84",
+    "BFCL_v4_parallel_multiple.json": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579",
+    "BFCL_v4_irrelevance.json": "2b6ed4c2e992cdcf5f1678a701851f944bef7550ee026ed1ddb89efed5be01a6",
+    "BFCL_v4_live_simple.json": "1af2ac87dca47556db7b7e37e51e28b459a38b594e3c7b3c792b4903598ca0c4",
+    "BFCL_v4_live_multiple.json": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+    "BFCL_v4_live_parallel.json": "6c26e9fdc3350cf596e6d1ea9c179cbff834761bccf562f4141ed29a839ca421",
+    "BFCL_v4_live_parallel_multiple.json": "21d4b9319c1faac431e22757b367ea28917fe467364c3a4b17f16ec06d4f6e79",
+    "BFCL_v4_live_irrelevance.json": "6559fda2beaceb609a2cd2e504c65b4a56cb448e1ef88fddfd199e163d163349",
+    "BFCL_v4_live_relevance.json": "e03f9e241657a137cba48a89ee12f47bf3fcb7e4f6274263e9c699a0c974203a"
+  },
+  "selection": "Every source entry, original category and file order; no sampling or deduplication.",
+  "excludes": "Multi-turn, memory, web-search and prompting-only format-sensitivity tasks.",
+  "evaluation": "Per-entry official checks; case-weighted accuracy is not the BFCL v4 overall leaderboard score.",
+  "holdout_note": "Includes existing smoke/dev/test IDs. Future adaptation must use development data only, never full-run failures to select rules or examples."
+}
