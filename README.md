@@ -20,15 +20,17 @@ Case [`simple_python_196`](reports/cases/simple_python/page-007.md#simple_python
 
 > What is the air quality index in London 2022/08/16?
 
+**This example evaluates a generated tool-call request. The air-quality tool was not executed, so no AQI value was retrieved.**
+
 Available tool: `air_quality(location: string, date: string)`. Its `date` parameter specifies **month-day-year**; the official accepted value is `08-16-2022`.
 
-| Model | Selected tool | Location | Generated `date` | Official verdict |
-|---|---|---|---|---|
-| Qwen3.5-9B | `air_quality` | `London` | `2022/08/16` | ✗ Incorrect |
-| Qwen3.8-27B | `air_quality` | `London` | `08-16-2022` | ✓ Correct |
-| gemma-4-26B-A4B-it | `air_quality` | `London` | `2022-08-16` | ✗ Incorrect |
+| Model | Generated call, rendered from the recorded arguments | Official call check |
+|---|---|---|
+| Qwen3.5-9B | `air_quality(location="London", date="2022/08/16")` | ✗ Date parameter mismatch |
+| Qwen3.8-27B | `air_quality(location="London", date="08-16-2022")` | ✓ Matches expected call |
+| gemma-4-26B-A4B-it | `air_quality(location="London", date="2022-08-16")` | ✗ Date parameter mismatch |
 
-All three models selected the tool for London; Qwen27B supplied the required date format. The table shows parsed values from the recorded tool calls, which were scored without execution. This is an illustrative case; the overall metrics above cover all 3,641 cases.
+All three models selected the tool for London; Qwen27B supplied the required date format. Here, a correct score means matching the expected function and arguments. An operational application would additionally execute the tool and pass its result back to the model to produce an answer containing the AQI. This study stops at checking the generated call. This is an illustrative case; the overall metrics above cover all 3,641 cases.
 
 - **[Read complete results on GitHub](reports/README.md)**: overall metrics and all 13 category scores.
 - **[Browse all 3,641 cases](reports/cases/README.md)**: small pages with questions, accepted answers and all three model outputs.

@@ -28,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 14405,
-      "sha256": "c8aa8dc5104059e023c86628e7f533d3316c2f3c86fe0042050c1c1d482896db"
+      "bytes": 14784,
+      "sha256": "c30016f1494a48f63768a69bc171a63a949614de9d18c42a59243d0a7fe99d44"
     },
     {
       "path": "configs/datasets/full_single_turn.manifest.json",
