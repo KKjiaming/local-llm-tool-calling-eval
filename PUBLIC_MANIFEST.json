@@ -943,18 +943,18 @@
     },
     {
       "path": "reports/full-single-turn-20261005-accuracy.pdf",
-      "bytes": 17893,
-      "sha256": "319760065b58e93c4821fc73883b34ebdc90a7e6c9092785666f4913a8328606"
+      "bytes": 18201,
+      "sha256": "c1f6b69eff71f40f9874d5005a4267007e7b55c6dec07e25b88130fd1a96e07f"
     },
     {
       "path": "reports/full-single-turn-20261005-accuracy.png",
-      "bytes": 221947,
-      "sha256": "876ebfb57101d8605d1867728c0d6f88c3350491ef9ec2a4710fa5f5fa86fdda"
+      "bytes": 211603,
+      "sha256": "3f9ae31e1b524b3f679e82269909531a16bcf6af01a36830255ecc0792886486"
     },
     {
       "path": "reports/full-single-turn-20261005-accuracy.svg",
-      "bytes": 36921,
-      "sha256": "459d7689d34c7397fcc994bd7c84ceee4177826ea6861db43f07f875774d9938"
+      "bytes": 52297,
+      "sha256": "b0feb771bc7c54e223929f114c92949eed25787665e42df3dd53955e6c4c0d2e"
     },
     {
       "path": "reports/full-single-turn-20261005-costs.pdf",
@@ -1163,8 +1163,8 @@
     },
     {
       "path": "scripts/plot_results.py",
-      "bytes": 5245,
-      "sha256": "a1bce43a0cd5447c5fc81c70d6d06383bf46f8233e2e3a21b26c7c47e2d340cb"
+      "bytes": 5572,
+      "sha256": "9a9a79a7c9b25a61bbcb321d7d25a8c6eaf28deeda5b56ef66ad7d86cff87c22"
     },
     {
       "path": "scripts/prepare_full_dataset.py",

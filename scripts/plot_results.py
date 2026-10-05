@@ -33,7 +33,7 @@ def main():
                        "live_irrelevance":"Live irrelevance", "live_relevance":"Live relevance"}
     labels = [category_labels.get(category, category) for category in categories]
     n = loaded[0][0]["n"]
-    fig, axis = plt.subplots(figsize=(max(11, len(categories)*1.2), 6))
+    fig, axis = plt.subplots(figsize=(max(11, len(categories)*1.2), 7.5))
     x = np.arange(len(categories))
     width = 0.75 / len(loaded)
     for i, (summary, _, _) in enumerate(loaded):
@@ -42,18 +42,24 @@ def main():
                         label=f"{summary['model'].split('/')[-1]} ({summary['correct']}/{summary['n']} overall)")
         for bar, category in zip(bars, categories):
             group = summary["categories"][category]
-            axis.text(bar.get_x()+bar.get_width()/2, bar.get_height()+1, f"{group['correct']}/{group['n']}",
-                      ha="center", va="bottom", fontsize=8)
+            fraction = rf"$\frac{{{group['correct']}}}{{{group['n']}}}$"
+            axis.text(bar.get_x()+bar.get_width()/2, bar.get_height()+1.5, fraction,
+                      ha="center", va="bottom", fontsize=10)
     axis.set(xticks=x, xticklabels=labels, ylim=(0, 114), ylabel="Official per-category accuracy (%)",
              title=f"Tool-calling correctness on {n:,} fixed BFCL cases")
     if len(categories) > 6:
         axis.tick_params(axis='x', labelrotation=20)
+        for label in axis.get_xticklabels():
+            label.set_horizontalalignment("right")
     axis.set_yticks([0, 25, 50, 75, 100])
     axis.grid(axis="y", alpha=0.15)
     axis.set_axisbelow(True)
-    axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=min(3,len(loaded)), frameon=False)
-    fig.text(0.01,0.01,"Recorded evaluation categories; not the BFCL v4 overall score. One selected run per model; official scores unchanged.",fontsize=9)
-    fig.tight_layout(rect=(0,0.09,1,1))
+    # Reserve a separate figure band for the legend, below all rotated labels.
+    handles, legend_labels = axis.get_legend_handles_labels()
+    fig.legend(handles, legend_labels, loc="lower center", bbox_to_anchor=(0.5, 0.075),
+               ncol=min(3,len(loaded)), frameon=False)
+    fig.text(0.01,0.02,"Recorded evaluation categories; not the BFCL v4 overall score. One selected run per model; official scores unchanged.",fontsize=9)
+    fig.tight_layout(rect=(0,0.18,1,1))
     for extension in ("png", "pdf", "svg"):
         fig.savefig(args.output.parent/(args.output.name+f"-accuracy.{extension}"), dpi=180)
     plt.close(fig)
