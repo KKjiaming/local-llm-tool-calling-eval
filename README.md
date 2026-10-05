@@ -14,9 +14,15 @@ A reproducible, exploratory AI engineering project by Jiaming Yue, comparing thr
 
 All 10,923 measured requests completed without inference request errors. Output-length truncation is separate from request failure. Official scores are retained unchanged, including truncated responses that pass the official relevance/irrelevance check.
 
-- [Full comparison](reports/full-single-turn-20261005.html), [per-case CSV](reports/full-single-turn-20261005.csv) and [machine-readable results](reports/full-single-turn-20261005.json).
-- [Per-category accuracy](reports/full-single-turn-20261005-accuracy.png) and [inference costs](reports/full-single-turn-20261005-costs.png); PDF/SVG exports are included.
-- Individual answer tables: [Qwen9B](results/qwen9b-full-single-turn-20261005/answers.html), [Qwen27B](results/qwen27b-full-single-turn-20261005/answers.html), [Gemma](results/gemma4-full-single-turn-20261005/answers.html).
+- **[Read complete results on GitHub](reports/README.md)**: overall metrics and all 13 category scores.
+- **[Browse all 3,641 cases](reports/cases/README.md)**: small pages with questions, accepted answers and all three model outputs.
+- [Small metrics CSV](reports/metrics.csv) and [category metrics CSV](reports/category-metrics.csv).
+
+![Per-category accuracy](reports/full-single-turn-20261005-accuracy.png)
+
+![Recorded inference costs](reports/full-single-turn-20261005-costs.png)
+
+The original large HTML/CSV/JSONL files remain available for download and reproducibility. They are not the browser-reading entry point: GitHub does not provide an interactive HTML report preview. See [downloads and run records](reports/README.md#downloads-and-reproducibility).
 
 ## Coverage and scoring
 
@@ -150,6 +156,8 @@ done
   results/gemma4-full-single-turn-20261005 \
   --output reports/full-single-turn-20261005
 ```
+
+Regenerate the small GitHub-readable reports with `python3.11 scripts/export_github_report.py`; this uses the published results and does not run inference.
 
 Offline integrity checks: `.venv-eval/bin/python scripts/test_full_evaluation.py -v`. Synthetic fixtures verify interruption/resume and official Java/JavaScript/relevance checks. They are software checks, not model results.
 
